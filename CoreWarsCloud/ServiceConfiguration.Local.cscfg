@@ -4,6 +4,7 @@
     <Instances count="1" />
     <ConfigurationSettings>
       <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" value="4adc9dc5-e6bf-400e-9b65-5985a23d7f5c" />
     </ConfigurationSettings>
   </Role>
   <Role name="CoreWars.Node">
