@@ -51,7 +51,7 @@
       <Private>True</Private>
       <RoleType>Web</RoleType>
       <RoleName>CoreWars.WebApi</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+      <UpdateDiagnosticsConnectionStringOnPublish>False</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
