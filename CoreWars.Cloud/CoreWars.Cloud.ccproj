@@ -5,14 +5,13 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>2.8</ProductVersion>
-    <ProjectGuid>6131cf0d-a30b-463a-8f32-2d4c7327589f</ProjectGuid>
+    <ProjectGuid>e107fc29-1ed2-4469-bb0b-aaac2677ddf9</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CoreWarsCloud</RootNamespace>
-    <AssemblyName>CoreWarsCloud</AssemblyName>
+    <RootNamespace>CoreWars.Cloud</RootNamespace>
+    <AssemblyName>CoreWars.Cloud</AssemblyName>
     <StartDevelopmentStorage>True</StartDevelopmentStorage>
-    <Name>CoreWarsCloud</Name>
-    <PackageEnableRemoteDebugger>True</PackageEnableRemoteDebugger>
+    <Name>CoreWars.Cloud</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,32 +39,28 @@
   <ItemGroup>
     <ProjectReference Include="..\CoreWars.Node\CoreWars.Node.csproj">
       <Name>CoreWars.Node</Name>
-      <Project>{d4f5e5a9-95ff-4213-9fef-ce575f6bd69d}</Project>
+      <Project>{cec2d0c5-d5b0-4422-8ee9-478bb266bc98}</Project>
       <Private>True</Private>
       <RoleType>Worker</RoleType>
       <RoleName>CoreWars.Node</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>False</UpdateDiagnosticsConnectionStringOnPublish>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
     <ProjectReference Include="..\CoreWars.WebApi\CoreWars.WebApi.csproj">
       <Name>CoreWars.WebApi</Name>
-      <Project>{c88c50c9-b2f1-4449-a73e-1381fff2166a}</Project>
+      <Project>{f325e857-aa70-42c3-90b5-8f959bda048b}</Project>
       <Private>True</Private>
       <RoleType>Web</RoleType>
       <RoleName>CoreWars.WebApi</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>False</UpdateDiagnosticsConnectionStringOnPublish>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CoreWars.NodeContent\" />
     <Folder Include="CoreWars.WebApiContent\" />
-    <Folder Include="Profiles" />
   </ItemGroup>
   <ItemGroup>
     <DiagnosticsConfiguration Include="CoreWars.NodeContent\diagnostics.wadcfgx" />
     <DiagnosticsConfiguration Include="CoreWars.WebApiContent\diagnostics.wadcfgx" />
-  </ItemGroup>
-  <ItemGroup>
-    <PublishProfile Include="Profiles\corewarsProduction.azurePubxml" />
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>

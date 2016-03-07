@@ -12,13 +12,13 @@ namespace CoreWars.WebApi.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {
-            return new string[] { "kod", "i", "kable" };
+            return new string[] { "kodikable", "kod", "kable", "kodikable.pl" };
         }
 
         // GET api/values/5
         public string Get(int id)
         {
-            return "kod i kable";
+            return "kodikable.pl";
         }
 
         // POST api/values
