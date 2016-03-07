@@ -12,6 +12,7 @@
     <AssemblyName>CoreWarsCloud</AssemblyName>
     <StartDevelopmentStorage>True</StartDevelopmentStorage>
     <Name>CoreWarsCloud</Name>
+    <PackageEnableRemoteDebugger>True</PackageEnableRemoteDebugger>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,10 +58,14 @@
   <ItemGroup>
     <Folder Include="CoreWars.NodeContent\" />
     <Folder Include="CoreWars.WebApiContent\" />
+    <Folder Include="Profiles" />
   </ItemGroup>
   <ItemGroup>
     <DiagnosticsConfiguration Include="CoreWars.NodeContent\diagnostics.wadcfgx" />
     <DiagnosticsConfiguration Include="CoreWars.WebApiContent\diagnostics.wadcfgx" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishProfile Include="Profiles\corewarsProduction.azurePubxml" />
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>
