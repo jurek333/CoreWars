@@ -44,7 +44,7 @@
       <Private>True</Private>
       <RoleType>Worker</RoleType>
       <RoleName>CoreWars.Node</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+      <UpdateDiagnosticsConnectionStringOnPublish>False</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
     <ProjectReference Include="..\CoreWars.WebApi\CoreWars.WebApi.csproj">
       <Name>CoreWars.WebApi</Name>

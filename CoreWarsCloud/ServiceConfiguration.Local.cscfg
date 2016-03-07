@@ -3,7 +3,7 @@
   <Role name="CoreWars.WebApi">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="false" />
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="jurek" />
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBlQYJKoZIhvcNAQcDoIIBhjCCAYICAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEDpuytryDBC7QkIkhBOqC2MwDQYJKoZIhvcNAQEBBQAEggEAYoiGoCAJ2EDxYmua0iEFVWTKpVp6JyfqmTK/j3f4HWdsNrnX3AvBF8SwTwm4OoqotmXzLYjNBqlvpOiuS9ubYV9dHJ1gvUd1KrzF7psIW/VtITX3o9GCIrzaeU7jOlcEFtIlcU+Ih4QW2CuUVsQKjf+5p54db8v4Aa0x+CiHBIYV6KVcjw0QtojXwvFCeSrdZ6tOElKD0/oPVm/MZQmlQzD4RaKmDNXUjiR+YNCA21DRXnFQIBRvOaaaUTUTdP9v848Q93HWeaOcBp3FtM9ssfB4js3FRckvOhLwVo+GdKzJLjmXKhi9+NAoq5s94wiXIt/TeNYKYf0b7UfuR8L2czArBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECKJUvPR1eQGagAgi0pl9E0LB1g==" />
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2017-03-07T23:59:59.0000000+01:00" />
@@ -15,8 +15,7 @@
   <Role name="CoreWars.Node">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
-      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="false" />
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="jurek" />
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBlQYJKoZIhvcNAQcDoIIBhjCCAYICAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEDpuytryDBC7QkIkhBOqC2MwDQYJKoZIhvcNAQEBBQAEggEAYoiGoCAJ2EDxYmua0iEFVWTKpVp6JyfqmTK/j3f4HWdsNrnX3AvBF8SwTwm4OoqotmXzLYjNBqlvpOiuS9ubYV9dHJ1gvUd1KrzF7psIW/VtITX3o9GCIrzaeU7jOlcEFtIlcU+Ih4QW2CuUVsQKjf+5p54db8v4Aa0x+CiHBIYV6KVcjw0QtojXwvFCeSrdZ6tOElKD0/oPVm/MZQmlQzD4RaKmDNXUjiR+YNCA21DRXnFQIBRvOaaaUTUTdP9v848Q93HWeaOcBp3FtM9ssfB4js3FRckvOhLwVo+GdKzJLjmXKhi9+NAoq5s94wiXIt/TeNYKYf0b7UfuR8L2czArBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECKJUvPR1eQGagAgi0pl9E0LB1g==" />
       <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2017-03-07T23:59:59.0000000+01:00" />

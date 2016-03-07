@@ -19,7 +19,6 @@
   </WebRole>
   <WorkerRole name="CoreWars.Node" vmsize="Small">
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" />
     </ConfigurationSettings>
     <Imports>
       <Import moduleName="RemoteAccess" />
