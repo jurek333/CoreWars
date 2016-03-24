@@ -9,18 +9,52 @@ using Microsoft.WindowsAzure;
 using Microsoft.WindowsAzure.Diagnostics;
 using Microsoft.WindowsAzure.ServiceRuntime;
 using Microsoft.WindowsAzure.Storage;
+using Akka.Actor;
+using System.Configuration;
+using CoreWars.Infrastructure.Messages;
 
 namespace CoreWars.Node
 {
+    public class AppSettings
+    {
+        public static readonly string SystemName = "ClusterName";
+    }
+
+    public class HealthActor : ReceiveActor
+    {
+        private Akka.Event.ILoggingAdapter _logger = Akka.Event.Logging.GetLogger(Context);
+
+        public HealthActor()
+        {
+            Receive<HearthBeat>(msg =>
+            {
+                _logger.Info("HearthBeat ");
+                Sender.Tell(new HearthBeat(Self.Path.Address.ToString() + "/user/" + Self.Path.Name, msg));
+            });
+        }
+
+        protected override void PreStart()
+        {
+            _logger.Info("Actor {0} starting...", string.Join(",", Self.Path.Elements));
+            base.PreStart();
+        }
+
+        protected override void PostStop()
+        {
+            base.PostStop();
+            _logger.Info("Actor {0} stopped...", string.Join(",", Self.Path.Elements));
+        }
+    }
+
     public class WorkerRole : RoleEntryPoint
     {
         private readonly CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
         private readonly ManualResetEvent runCompleteEvent = new ManualResetEvent(false);
 
+        private ActorSystem _system;
+
         public override void Run()
         {
-            Trace.TraceInformation("CoreWars.Node is running");
-
             try
             {
                 this.RunAsync(this.cancellationTokenSource.Token).Wait();
@@ -33,13 +67,12 @@ namespace CoreWars.Node
 
         public override bool OnStart()
         {
-            // Set the maximum number of concurrent connections
             ServicePointManager.DefaultConnectionLimit = 12;
 
-            // For information on handling configuration changes
-            // see the MSDN topic at http://go.microsoft.com/fwlink/?LinkId=166357.
-
             bool result = base.OnStart();
+            string systemName = ConfigurationManager.AppSettings[AppSettings.SystemName];
+            _system = ActorSystem.Create(systemName);
+            IActorRef health = _system.ActorOf(Props.Create<HealthActor>(), "health");
 
             Trace.TraceInformation("CoreWars.Node has been started");
 
@@ -50,22 +83,21 @@ namespace CoreWars.Node
         {
             Trace.TraceInformation("CoreWars.Node is stopping");
 
+            var termination = _system.Terminate();
+
             this.cancellationTokenSource.Cancel();
             this.runCompleteEvent.WaitOne();
 
             base.OnStop();
+
+            Task.WaitAll(termination);
 
             Trace.TraceInformation("CoreWars.Node has stopped");
         }
 
         private async Task RunAsync(CancellationToken cancellationToken)
         {
-            // TODO: Replace the following with your own logic.
-            while (!cancellationToken.IsCancellationRequested)
-            {
-                Trace.TraceInformation("Working");
-                await Task.Delay(1000);
-            }
+            await Task.WhenAll(_system.WhenTerminated);
         }
     }
 }
