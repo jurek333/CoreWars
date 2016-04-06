@@ -12,6 +12,7 @@
     <AssemblyName>CoreWars.Cloud</AssemblyName>
     <StartDevelopmentStorage>True</StartDevelopmentStorage>
     <Name>CoreWars.Cloud</Name>
+    <UseWebProjectPorts>False</UseWebProjectPorts>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,14 +54,24 @@
       <RoleName>CoreWars.WebApi</RoleName>
       <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
+    <ProjectReference Include="..\Faros\Faros.csproj">
+      <Name>Faros</Name>
+      <Project>{e311499c-7e1f-4ae9-b7ab-a7d2d2f03ba5}</Project>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <RoleName>Faros</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CoreWars.NodeContent\" />
     <Folder Include="CoreWars.WebApiContent\" />
+    <Folder Include="FarosContent\" />
   </ItemGroup>
   <ItemGroup>
     <DiagnosticsConfiguration Include="CoreWars.NodeContent\diagnostics.wadcfgx" />
     <DiagnosticsConfiguration Include="CoreWars.WebApiContent\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="FarosContent\diagnostics.wadcfgx" />
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>

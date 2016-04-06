@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreWars.Node", "CoreWars.N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreWars.Infrastructure.Messages", "CoreWars.Infrastructure.Messages\CoreWars.Infrastructure.Messages.csproj", "{912445C3-AF85-44D1-9268-1A970083EC1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faros", "Faros\Faros.csproj", "{E311499C-7E1F-4AE9-B7AB-A7D2D2F03BA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{912445C3-AF85-44D1-9268-1A970083EC1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{912445C3-AF85-44D1-9268-1A970083EC1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{912445C3-AF85-44D1-9268-1A970083EC1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E311499C-7E1F-4AE9-B7AB-A7D2D2F03BA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E311499C-7E1F-4AE9-B7AB-A7D2D2F03BA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E311499C-7E1F-4AE9-B7AB-A7D2D2F03BA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E311499C-7E1F-4AE9-B7AB-A7D2D2F03BA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
